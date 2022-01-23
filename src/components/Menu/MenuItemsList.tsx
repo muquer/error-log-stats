@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 
 import { DRAWER_LIST } from "../../constants/menu";
 import MenuItem from "./MenuItem";
-const MenuItemsList = () => {
+const MenuItemsList: React.FC = () => {
 
     const { pathname } = useLocation();
 

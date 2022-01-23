@@ -1,9 +1,8 @@
-export enum LogAttributes{
+export enum LogAttributes {
     datetime = "Date",
     severity = "Severity",
     message = "Message"
 }
-
 
 export type LogDetails = {
     datetime: string,
@@ -12,6 +11,5 @@ export type LogDetails = {
 }
 
 export type LogSeverityStats = {
-    quantity: number,
-    percentage: number
+    quantity: number
 }

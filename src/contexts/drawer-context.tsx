@@ -11,8 +11,8 @@ type DrawerContextProviderProps = {
 
 const DrawerContext = createContext<DrawerContextType | undefined>(undefined);
 
-const DrawerContextProvider = ({ children }: DrawerContextProviderProps) => {
-  const [isOpened, toggleIsOpened] = useState(false);
+const DrawerContextProvider: React.FC<DrawerContextProviderProps> = ({ children }: DrawerContextProviderProps) => {
+  const [isOpened, toggleIsOpened] = useState<boolean>(false);
 
   return (
     <DrawerContext.Provider value={{ isOpened, toggleIsOpened }}>

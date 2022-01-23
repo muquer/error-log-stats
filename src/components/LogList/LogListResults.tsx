@@ -28,7 +28,7 @@ export const LogListResults = (props: { list: LogDetails[] }) => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {(props.list).map((value, key) => (
+                        {(props.list).map((value: { [key: string]: string }, key: number) => (
                             <TableRow
                                 hover
                                 key={key}

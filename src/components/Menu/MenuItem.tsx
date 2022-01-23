@@ -31,7 +31,7 @@ const MenuItem: React.FC<Props> = ({
     onClick,
 }) => {
     const classes = useStyles();
-    const link = (
+    const link: JSX.Element = (
         <ListItem
             button
             selected={selected}

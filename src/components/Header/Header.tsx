@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }));
 
-const Header = () => {
+const Header: React.FC = () => {
     const classes = useStyles();
     const { isOpened, toggleIsOpened } = useDrawerContext();
     return (

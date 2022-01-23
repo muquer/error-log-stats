@@ -1,5 +1,7 @@
 # Error log statistics
 
+https://error-log-stats.herokuapp.com/
+
 ## Quick Start
 
 1. Get the latest version
@@ -22,3 +24,13 @@ npm start
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+---
+
+Made with:
+
+[React](https://reactjs.org/) 
+
+[Redux](https://redux.js.org/)
+
+[Material UI](https://mui.com)

@@ -30,10 +30,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }));
 
-const CustomDrawer = () => {
+const CustomDrawer: React.FC = () => {
     const classes = useStyles();
     const { isOpened, toggleIsOpened } = useDrawerContext();
-    const theme = useTheme();
+    const theme: Theme = useTheme();
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("sm"));
 
     return (

@@ -1,29 +1,33 @@
 import { Doughnut } from 'react-chartjs-2';
 import { Box, Card, CardContent, Divider, Typography, useTheme } from '@mui/material';
 import { LogSeverityStats } from '../../external_data_mock/types';
+import { Theme } from "@material-ui/core/styles";
 import Grid from '@material-ui/core/Grid';
 
-export const TrafficByDevice = (props: { stats: { [key: string]: LogSeverityStats }, total: number }) => {
-    const theme = useTheme();
+type Props = {
+    stats: { [key: string]: LogSeverityStats },
+    total: number
+}
 
-    //calculate keys and values as array in order to display on the graph
-    let keys: string[] = []
-    let values = Object.keys(props.stats).map((value) => {
-        keys.push(value)
+export const LogStatistcs: React.FC<Props> = (props: { stats: { [key: string]: LogSeverityStats }, total: number }) => {
+    const theme: Theme = useTheme();
+
+    const logSeverity: string[] = Object.keys(props.stats)
+    const logSeverityQuantity: number[] = logSeverity.map((value) => {
         return props.stats[value].quantity
     })
 
     const data = {
         datasets: [
             {
-                data: values,
-                backgroundColor: ['#3F51B5', '#FB8C00', '#e53935',],
+                data: logSeverityQuantity,
+                backgroundColor: ['#3F51B5', '#FB8C00', '#e53935'],
                 borderWidth: 8,
                 borderColor: '#FFFFFF',
                 hoverBorderColor: '#FFFFFF'
             }
         ],
-        labels: keys
+        labels: logSeverity
     };
 
     const options: any = {
@@ -51,7 +55,7 @@ export const TrafficByDevice = (props: { stats: { [key: string]: LogSeverityStat
     return (
         <Grid
             container
-            justify="center"
+            justifyContent="center"
             alignItems="center"
             direction="column"
             spacing={1}
